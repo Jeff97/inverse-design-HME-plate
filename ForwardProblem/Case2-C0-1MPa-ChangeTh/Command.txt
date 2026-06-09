@@ -1,0 +1,21 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Case2-C0-1MPa-ChangeTh
+
+---------------------------------------------------------------------
+abaqus job=Beam-C0-1-Th001 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-C0-1-Th003 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-C0-1-Th005 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-C0-1-Th007 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-C0-1-Th010 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

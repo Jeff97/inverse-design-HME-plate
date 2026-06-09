@@ -1,0 +1,74 @@
+*Heading
+*PARAMETER
+nUvrm = 7
+nPROPS = 8
+** Nodes---------------------------------------------------------------
+*Node, NSET=AllNodes
+*INCLUDE, INPUT=InputFiles\Coords-All.inp
+** Elements------------------------------------------------------------
+** User element definition, list of active dof in the first node, refer to ABAQUS's convention, "8" is pressure "11" is temperature 
+*User element, type=u3, nodes=20, coordinates=3, properties=<nPROPS>, variables=<nUvrm>
+1, 2, 3, 11, 8
+9, 1, 2, 3, 11
+*Element, type=u3, Elset=UserElem
+*INCLUDE, INPUT=InputFiles\Elems-All.inp
+** Dummy element overlaid on the user elements
+*Element, type=C3D20, Elset=Dummy
+*INCLUDE, INPUT=InputFiles\Elems-Dummy.inp
+** Section: HomoSection
+*Solid Section, elset=Dummy, material=Dummy
+** SETS ---------------------------------------------------------------
+*INCLUDE, INPUT=InputFiles\Elems-Nodes-Set.inp
+*Elset, elset=Sample-Dummy, generate
+ 100001,  104329,  1
+** MATERIALS ----------------------------------------------------------
+*PARAMETER
+PI = 3.14159265359
+C0 = 1.0E+5
+Nu = 0.499
+MValue = 100
+bValue = 25.0
+Finalg = 1.0
+Theta_b = PI / 2.0
+h = 0.04 / 2.0
+TotalT = 1.0
+** PROPS(1) - C0: Material Parameter (Pa)
+** PROPS(2) - Nu: Poisson's ratio
+** PROPS(3) - MValue: Magnetization magnitude (kA/m)
+** PROPS(4) - bValue: Magnetic induction magnitude (mT)
+** PROPS(5) - Finalg: Final bending angle (Rad)
+** PROPS(6) - Theta_b: Magnetic induction direction angle (Rad)
+** PROPS(7) - h: Half thickness (m)
+** PROPS(8) - TotalT: Total loading time (s)
+*UEL Property, elset=UserElem
+<C0>, <Nu>, <MValue>, <bValue>, <Finalg>, <Theta_b>, <h>, <TotalT>
+** DUMMY MATERIAL
+*MATERIAL,NAME=Dummy
+*Hyperelastic, Neo Hooke
+1.0e-10, 1.0e10
+*User output variables
+<nUvrm>
+** --------------------------------------------------------------------
+** STEP: MagneticLoad
+** 
+*Step, name=MagneticLoad, nlgeom=YES, inc=200
+*Static
+0.01, <TotalT>, 1e-05, 0.02
+** 
+** ---- BOUNDARY CONDITIONS ----
+*Boundary
+LeftEnd, 1, 3
+AllNodes, 2, 2
+*Boundary
+AllNodes, 11,11
+** ---- LOADS ----
+** *Dload
+** UserElem, BXNU, 0.
+** UserElem, BYNU, 1.
+** OUTPUT REQUESTS ----------------------------------------------------
+*Output, field, freq=1
+*Node Output, NSET=AllNodes
+ U, COORD
+*Element Output, elset=Dummy
+ UVARM
+*End Step

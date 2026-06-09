@@ -1,0 +1,22 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Case5-Th005-ChangeTheta
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th005-C0-1-Theta-1 cpus=4  user=UEL-HardMagneto-FM-Q2-Theta-1.for
+y
+abaqus job=Beam-Th005-C0-1-Theta-2 cpus=4  user=UEL-HardMagneto-FM-Q2-Theta-2.for
+y
+abaqus job=Beam-Th005-C0-1-Theta-3 cpus=4  user=UEL-HardMagneto-FM-Q2-Theta-3.for
+y
+abaqus job=Beam-Th005-C0-1-Theta-4 cpus=4  user=UEL-HardMagneto-FM-Q2-Theta-4.for
+y
+abaqus job=Beam-Th005-C0-1-Theta-5 cpus=24  user=UEL-HardMagneto-FM-Q2-Theta-5.for
+y
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

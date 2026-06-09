@@ -1,0 +1,16 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Benchmark-LinearM0
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th004-Constant cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-Linear cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-Min cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

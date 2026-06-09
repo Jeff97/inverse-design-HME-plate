@@ -1,0 +1,23 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Case3-Th005-ChangeOrient
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th005-C0-1-ThetaM-0 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-1-ThetaM-30 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-1-ThetaM-45 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-1-ThetaM-60 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-1-ThetaM-90 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

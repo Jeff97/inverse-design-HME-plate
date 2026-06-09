@@ -1,0 +1,18 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Verification-branch
+---------------------------------------------------------------------
+abaqus job=Beam-Th004-Branch1 cpus=12  user=UEL-HardMagneto-FM-Branch1.for
+y
+abaqus job=Beam-Th004-Branch1-AdvancedLoading cpus=24  user=UEL-HardMagneto-FM-Branch1-AdvancedLoading.for
+y
+
+abaqus job=Beam-Th004-Branch2 cpus=12  user=UEL-HardMagneto-FM-Branch2.for
+y
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Beam-Th004-Branch1-AdvancedLoading
+
+timeout /t 180 /nobreak

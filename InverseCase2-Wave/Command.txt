@@ -1,0 +1,18 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\InverseCase2-Wave
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th004-1 cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-2 cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-3 cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-4 cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

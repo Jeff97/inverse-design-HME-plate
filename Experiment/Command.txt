@@ -1,0 +1,22 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Experiment
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th02-S cpus=8  user=UEL-HardMagneto-FM-Q2-LetterS.for
+y
+abaqus job=Beam-Th02-C cpus=8  user=UEL-HardMagneto-FM-Q2-LetterC.for
+y
+abaqus job=Beam-Th02-U cpus=8  user=UEL-HardMagneto-FM-Q2-LetterU.for
+y
+abaqus job=Beam-Th012-T cpus=24  user=UEL-HardMagneto-FM-Q2-LetterT.for
+y
+
+
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

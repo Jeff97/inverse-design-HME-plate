@@ -1,0 +1,22 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Th005-ChangeEpsilon
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th005-C0-1 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-2 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-3 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-4 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-C0-5 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

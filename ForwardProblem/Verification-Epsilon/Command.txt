@@ -1,0 +1,45 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\Verification-Epsilon
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th005-Epsilon-Case1-1 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case1-2 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case1-3 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case1-4 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case1-5 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+abaqus job=Beam-Th005-Epsilon-Case2-1 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case2-2 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case2-3 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case2-4 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case2-5 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+abaqus job=Beam-Th005-Epsilon-Case3-1 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case3-2 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case3-3 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case3-4 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th005-Epsilon-Case3-5 cpus=4  user=UEL-HardMagneto-FM-Q2.for
+y
+
+
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak

@@ -1,0 +1,19 @@
+T:
+
+cd T:\Abaqus-Temp\20260110MagnetoBeam\InverseCase1-Bending
+
+---------------------------------------------------------------------
+abaqus job=Beam-Th004-0.5Pi cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-1Pi cpus=8  user=UEL-HardMagneto-FM-Q2.for
+y
+abaqus job=Beam-Th004-1.5Pi cpus=12  user=UEL-HardMagneto-FM-Q2-LinearG.for
+y
+abaqus job=Beam-Th004-2Pi cpus=12  user=UEL-HardMagneto-FM-Q2-LinearG.for
+y
+
+------------------------------------------
+TODO:
+abaqus terminate job=Cylinder-g08-Gm120
+
+timeout /t 180 /nobreak
