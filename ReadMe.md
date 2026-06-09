@@ -86,24 +86,13 @@ The PDF figures used below were converted from the manuscript figure files to PN
 
 **Programmable domain for the constant-magnetization case under fabrication/loading limits.** The mathematical limit defines the local solvability boundary, the physical limit gives the upper bound of the available magnetic loading, and the green region indicates the portion that is both mathematically solvable and physically reachable.
 
-<table align="center">
-  <tr>
-    <th>h = 0.01</th>
-    <th>h = 0.02</th>
-    <th>h = 0.04</th>
-  </tr>
-  <tr>
-    <td align="center"><img src="ProgrammableRegion-1.png" width="300" alt="Programmable domain for hbar 0.01"></td>
-    <td align="center"><img src="ProgrammableRegion-2.png" width="300" alt="Programmable domain for hbar 0.02"></td>
-    <td align="center"><img src="ProgrammableRegion-3.png" width="300" alt="Programmable domain for hbar 0.04"></td>
-  </tr>
-</table>
+| h = 0.01 | h = 0.02 | h = 0.04 |
+| --- | --- | --- |
+| <img src="ProgrammableRegion-1.png" width="300" alt="Programmable domain for hbar 0.01"> | <img src="ProgrammableRegion-2.png" width="300" alt="Programmable domain for hbar 0.02"> | <img src="ProgrammableRegion-3.png" width="300" alt="Programmable domain for hbar 0.04"> |
 
-<p align="center">
-  <img src="ProgrammableEndpoint.png" width="420" alt="Endpoint workspace for hbar 0.02 and epsilon 0.1">
-</p>
-
-<p align="center"><strong>Endpoint workspace for h = 0.02 and epsilon = 0.1.</strong></p>
+| Endpoint workspace for h = 0.02 and epsilon = 0.1 |
+| --- |
+| <img src="ProgrammableEndpoint.png" width="420" alt="Endpoint workspace for hbar 0.02 and epsilon 0.1"> |
 
 The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, the red plane denotes the physical upper bound $\epsilon_{\max}=0.3$, and the green shaded volume indicates the feasible programmable region. The endpoint workspace is obtained by stochastic inverse-design sampling in the upper half-plane.
 
@@ -111,29 +100,13 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 
 **Comparison between the asymptotic plate model and 3D finite element simulations for representative cases.** Solid lines denote the plate-model predictions, and scatters denote the 3D FE results. Subfigures correspond to Cases 1-5.
 
-<table align="center">
-  <tr>
-    <th>Case 1</th>
-    <th>Case 2</th>
-    <th>Case 3</th>
-  </tr>
-  <tr>
-    <td align="center"><img src="Forward-Case1.png" width="300" alt="Forward verification case 1"></td>
-    <td align="center"><img src="Forward-Case2.png" width="300" alt="Forward verification case 2"></td>
-    <td align="center"><img src="Forward-Case3.png" width="300" alt="Forward verification case 3"></td>
-  </tr>
-</table>
+| Case 1 | Case 2 | Case 3 |
+| --- | --- | --- |
+| <img src="Forward-Case1.png" width="300" alt="Forward verification case 1"> | <img src="Forward-Case2.png" width="300" alt="Forward verification case 2"> | <img src="Forward-Case3.png" width="300" alt="Forward verification case 3"> |
 
-<table align="center">
-  <tr>
-    <th>Case 4</th>
-    <th>Case 5</th>
-  </tr>
-  <tr>
-    <td align="center"><img src="Forward-Case4.png" width="300" alt="Forward verification case 4"></td>
-    <td align="center"><img src="Forward-Case5.png" width="300" alt="Forward verification case 5"></td>
-  </tr>
-</table>
+| Case 4 | Case 5 |
+| --- | --- |
+| <img src="Forward-Case4.png" width="300" alt="Forward verification case 4"> | <img src="Forward-Case5.png" width="300" alt="Forward verification case 5"> |
 
 ### Case 1: Different Bending Angles
 
