@@ -92,7 +92,7 @@ The PDF figures used below were converted from the manuscript figure files to PN
 
 | Endpoint workspace for h = 0.02 and epsilon = 0.1 |
 | --- |
-| <img src="ProgrammableEndpoint.png" width="420" alt="Endpoint workspace for hbar 0.02 and epsilon 0.1"> |
+| <img src="ProgrammableEndpoint.png" width="500" alt="Endpoint workspace for hbar 0.02 and epsilon 0.1"> |
 
 The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, the red plane denotes the physical upper bound $\epsilon_{\max}=0.3$, and the green shaded volume indicates the feasible programmable region. The endpoint workspace is obtained by stochastic inverse-design sampling in the upper half-plane.
 
