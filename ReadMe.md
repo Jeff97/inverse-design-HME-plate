@@ -2,15 +2,15 @@
 
 This repository provides supplementary ABAQUS files for the manuscript:
 
-> **Inverse design of hard-magnetoelastic plates for shape morphing under plane-strain conditions**.
-> Zhanfeng Li, Yafei Wang, Junjie Lan, Zuodong Wang, Jianbin Wu, Xiaohu Yao, Mokarram Hossain, and Jiong Wang.  
+> **Inverse Design of Hard-Magnetoelastic Plates for Shape Morphing: Analytical Formulas and Experimental Validation**.
+> Zhanfeng Li, Yafei Wang, Jiong Wang, Xiaohu Yao, Mokarram Hossain, Junjie Lan, Zuodong Wang, and Jianbin Wu.  
 
-The files include ABAQUS input files, user-element subroutines, command examples, post-processing scripts, and selected output data for the forward-model validations, inverse-design examples, benchmark studies, and experimental comparisons reported in the manuscript.
+The files include ABAQUS input files, user-element subroutines, command examples, post-processing scripts, and selected output data for reproducing the forward-model validations, analytical inverse-design examples, benchmark studies, branch-selection checks, and experimental comparisons reported in the manuscript.
 
 ## Repository Contents
 
 - `ForwardProblem/`: forward simulations and model-verification cases.
-- `Verification-branch/`: numerical checks for branch selection and loading-path effects.
+- `Verification-branch/`: numerical checks for branch selection, branch reachability, and loading-path effects.
 - `InverseCase1-Bending/`: inverse-design examples for monotonic large-angle bending.
 - `InverseCase2-Wave/`: inverse-design examples for distributed wavy morphing.
 - `InverseCase3-Letter/`: inverse-design examples for S-C-U-T letter-like targets.
@@ -80,11 +80,11 @@ The PDF figures used below were converted from the manuscript figure files to PN
 
 ![Inverse-design workflow for shape programming of hard-magnetoelastic cantilever plates.](Framework.png)
 
-**Inverse-design workflow for shape programming of hard-magnetoelastic cantilever plates.** For a target shape $g(\xi)$ and inputs $(L,2h,C_0,H_0,\theta_H,M_0)$, the workflow checks feasibility, solves candidate magnetization-direction branches, selects the preferred branch by magnetic-potential ranking, and verifies the result by 3D FE simulations.
+**Inverse-design workflow for shape programming of hard-magnetoelastic cantilever plates.** For a target shape $g(\xi)$ and inputs $(L,2h,C_0,H_0,\theta_H,M_0)$, the workflow uses the explicit analytical inverse solution to check feasibility, solve candidate magnetization-direction branches, select the preferred branch by magnetic-potential ranking, and verify the result by 3D FE simulations.
 
 ### Programmable Domain
 
-**Programmable domain for the constant-magnetization case under fabrication/loading limits.** The mathematical limit defines the local solvability boundary, the physical limit gives the upper bound of the available magnetic loading, and the green region indicates the portion that is both mathematically solvable and physically reachable.
+**Programmable domain for the constant-magnetization case under fabrication/loading limits.** The critical mathematical boundary $\epsilon_c$ defines local solvability, the physical limit gives the upper bound of the available magnetic loading, and the green region indicates the portion that is both mathematically solvable and physically reachable.
 
 | h = 0.01 | h = 0.02 | h = 0.04 |
 | --- | --- | --- |
@@ -108,9 +108,15 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 | --- | --- |
 | <img src="Forward-Case4.png" width="300" alt="Forward verification case 4"> | <img src="Forward-Case5.png" width="300" alt="Forward verification case 5"> |
 
+**Constitutive-model comparison for the magnetization update.** The manuscript also compares the retained $\mathbb{F}$-based magnetization update with an independent rotation-based 3D FE implementation. For the tested pure-bending cantilever cases, the maximum root-mean-square discrepancy remains $5.12\times10^{-4}$, or about $0.052\%$ of the normalized plate length.
+
+| $\mathbb{F}$-based vs. rotation-based profiles | Root-mean-square discrepancy |
+| --- | --- |
+| <img src="Forward-Case6.png" width="420" alt="F-based and rotation-based model comparison"> | <img src="FR_Model_RMSE_BarChart.png" width="420" alt="RMSE between F-based and rotation-based models"> |
+
 ### Case 1: Different Bending Angles
 
-**Case-1 illustrative examples arranged in a $2\times2$ layout.**
+**Case-1 inverse-design results for increasing end rotation.** Green profiles denote the FE-simulated deformation sequence, and blue profiles with arrows denote the prescribed target shapes.
 
 | Case 1-1 with $\Theta_{\mathrm{end}}=\pi/2$ | Case 1-2 with $\Theta_{\mathrm{end}}=\pi$ |
 | --- | --- |
@@ -122,7 +128,7 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 
 ### Case 2: Different Waviness Levels
 
-**Case-2 illustrative examples arranged in a $2\times2$ layout.**
+**Case-2 inverse-design results for different waviness levels.** Green profiles denote the FE-simulated deformation sequence, and blue profiles with arrows denote the prescribed target shapes.
 
 | Case 2-1 with $A=\pi/2$ and $n=1/2$ | Case 2-2 with $A=\pi/4$ and $n=3/2$ |
 | --- | --- |
@@ -134,7 +140,7 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 
 ### Case 3: Letter-Like Target Shapes
 
-**Case-3 results showing an assembled "SCUT" overview and the four corresponding single-letter targets.**
+**Case-3 inverse-design and simulation results for the assembled "SCUT" pattern.** Green profiles denote the FE-simulated deformation sequence, and blue profiles with arrows denote the prescribed target shapes.
 
 <p align="center">
   <img src="SCUT.png" width="520" alt="Assembled SCUT layout">
@@ -152,7 +158,7 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 
 ### Sensitivity Benchmarks
 
-**Shape programming results for benchmark $\mathcal{B}_{\epsilon}$ evaluated at different magneto-mechanical parameters $\epsilon$.**
+**Shape programming results for benchmark $\mathcal{B}_{\epsilon}$ evaluated at different magneto-mechanical parameters $\epsilon$.** This benchmark uses the same target while varying magnetic-loading strength to quantify sensitivity and accuracy.
 
 | $\epsilon=0.02$ | $\epsilon=0.05$ | $\epsilon=0.10$ | $\epsilon=0.15$ |
 | --- | --- | --- | --- |
@@ -163,7 +169,7 @@ The gray/blue surface denotes the critical mathematical boundary $\epsilon_c$, t
 </p>
 
 
-**Shape programming results for benchmark $\mathcal{B}_{\bar{h}}$ evaluated across different total normalized thicknesses $2\bar{h}$.**
+**Shape programming results for benchmark $\mathcal{B}_{\bar{h}}$ evaluated across different total normalized thicknesses $2\bar{h}$.** This benchmark keeps the target fixed while varying slenderness to assess thickness sensitivity.
 
 | $2\bar{h}=0.01$ | $2\bar{h}=0.03$ | $2\bar{h}=0.05$ | $2\bar{h}=0.07$ |
 | --- | --- | --- | --- |
