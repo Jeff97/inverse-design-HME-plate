@@ -26,6 +26,28 @@ The repository supports five connected tasks:
 - Reproduce bending, wavy, letter-like, and sensitivity examples
 - Compare analytical design, 3D FE predictions, and experiments
 
+## 🎬 Dynamic visualizations
+
+Click either animation to open the full-resolution MP4.
+
+<p align="center">
+  <a href="media/programmable-region-thickness-sweep.mp4?raw=1">
+    <img src="media/programmable-region-thickness-sweep.gif" width="820" alt="Animated thickness sweep of the programmable region">
+  </a>
+</p>
+
+<p align="center"><strong>Programmable region across plate thickness</strong><br>
+<sub>Evolution of the admissible design region as the nondimensional thickness <em>h</em> varies from 0.01 to 0.04.</sub></p>
+
+<p align="center">
+  <a href="media/endpoint-workspace-evolution.mp4?raw=1">
+    <img src="media/endpoint-workspace-evolution.gif" width="820" alt="Animated evolution of the reachable endpoint workspace">
+  </a>
+</p>
+
+<p align="center"><strong>Endpoint-workspace evolution</strong><br>
+<sub>Evolution of reachable centerline shapes and their endpoint coverage across the design workspace.</sub></p>
+
 ## ⚡ Quick start
 
 ### Prerequisites
@@ -58,6 +80,7 @@ The `job` value must match an `.inp` filename without its extension, and `user` 
 | [`Benchmark-LinearM0/`](Benchmark-LinearM0/) | Non-uniform magnetization-magnitude study |
 | [`Experiment/`](Experiment/) | FE files, scripts, outputs, and experimental comparisons |
 | [`figures/`](figures/) | Regenerated manuscript figures |
+| [`media/`](media/) | Full-resolution MP4 demonstrations and animated README previews |
 
 Most case directories use the following structure:
 
