@@ -92,7 +92,7 @@ The scripts extract deformed `COORD` components along the selected path and writ
 
 ## 📊 Design cases and figures
 
-<details>
+<details open>
 <summary><strong>📊 Core theory and inverse-design cases</strong></summary>
 
 ### Forward and inverse kinematics
@@ -131,7 +131,7 @@ _Figure 8: Assembled S-C-U-T target layout. Individual FE comparisons are availa
 
 ---
 
-<details>
+<details open>
 <summary><strong>📊 Benchmarks, verification, and experiments</strong></summary>
 
 ### Sensitivity benchmarks
